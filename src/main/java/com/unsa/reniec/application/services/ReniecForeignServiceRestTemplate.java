@@ -1,4 +1,4 @@
-package com.unsa.reniec.application.web;
+package com.unsa.reniec.application.services;
 
 import org.springframework.http.*;
 import org.springframework.stereotype.Service;
@@ -6,13 +6,12 @@ import org.springframework.web.client.RestTemplate;
 
 import lombok.AllArgsConstructor;
 
-import com.unsa.reniec.application.services.ReniecForeignService;
 import com.unsa.reniec.domain.dtos.PersonResponseDto;
 import com.unsa.reniec.domain.dtos.ReniecApisNetResponse;
 
 @Service("reniec-apis-net-rest-template")
 @AllArgsConstructor
-public class ReniecApisNetRestTemplate implements ReniecForeignService {
+public class ReniecForeignServiceRestTemplate implements ReniecForeignService {
 
     private final RestTemplate restTemplate;
     private static final String baseUrl = "https://api.apis.net.pe";

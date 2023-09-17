@@ -1,6 +1,5 @@
 package com.unsa.reniec.application.services;
 
-import com.unsa.reniec.domain.entities.PersonEntity;
 import org.springframework.stereotype.Service;
 
 import lombok.AllArgsConstructor;
@@ -9,6 +8,7 @@ import java.util.List;
 
 import com.unsa.reniec.domain.dtos.PersonRequestDto;
 import com.unsa.reniec.domain.dtos.PersonResponseDto;
+import com.unsa.reniec.domain.entities.PersonEntity;
 import com.unsa.reniec.domain.repositories.PersonRepository;
 
 @Service
