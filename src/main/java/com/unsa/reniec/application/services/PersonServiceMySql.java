@@ -35,11 +35,6 @@ public class PersonServiceMySql implements PersonService {
     @Override
     public PersonResponseDto createPerson(PersonRequestDto personRequestDto) {
         PersonEntity personEntity = mapPersonRequestDtoToPersonEntity(personRequestDto);
-        System.out.println("Name: " + personEntity.getName());
-        System.out.println("Father: " + personEntity.getFatherLastname());
-        System.out.println("Mother: " + personEntity.getMotherLastname());
-        System.out.println("Document: " + personEntity.getDocumentNumber());
-        System.out.println("Check: " + personEntity.getCheckDigit());
         return mapPersonEntityToPersonResponseDto(this.personRepository.save(personEntity));
     }
 
