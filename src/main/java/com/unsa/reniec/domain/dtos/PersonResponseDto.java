@@ -8,7 +8,6 @@ import lombok.*;
 @AllArgsConstructor
 public class PersonResponseDto {
 
-    private Integer id;
     private String name;
     private String fatherLastname;
     private String motherLastname;
