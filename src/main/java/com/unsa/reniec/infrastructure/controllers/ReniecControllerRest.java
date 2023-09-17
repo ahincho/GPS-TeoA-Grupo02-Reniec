@@ -1,20 +1,19 @@
 package com.unsa.reniec.infrastructure.controllers;
 
+import com.unsa.reniec.application.services.PersonServiceMySql;
 import com.unsa.reniec.application.services.ReniecForeignService;
 import com.unsa.reniec.domain.dtos.PersonRequestDto;
 import com.unsa.reniec.domain.dtos.PersonResponseDto;
 import lombok.AllArgsConstructor;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
-@RequestMapping("/api/people")
+@RequestMapping("/api/reniec/people")
 @AllArgsConstructor
 public class ReniecControllerRest implements ReniecController {
 
     private ReniecForeignService reniecForeignService;
+    private PersonServiceMySql personServiceMySql;
 
     @Override
     @GetMapping
@@ -23,8 +22,9 @@ public class ReniecControllerRest implements ReniecController {
     }
 
     @Override
-    public PersonResponseDto create(PersonRequestDto personRequestDto) {
-        return null;
+    @PostMapping
+    public PersonResponseDto create(@RequestBody PersonRequestDto personRequestDto) {
+        return this.personServiceMySql.createPerson(personRequestDto);
     }
 
     @Override
