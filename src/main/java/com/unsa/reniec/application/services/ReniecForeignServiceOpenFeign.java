@@ -1,15 +1,15 @@
 package com.unsa.reniec.application.services;
 
-import com.unsa.reniec.domain.dtos.ReniecApisNetResponse;
-import feign.FeignException;
 import org.springframework.context.annotation.Primary;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+
+import feign.FeignException;
 
 import lombok.AllArgsConstructor;
 
 import com.unsa.reniec.application.web.ReniecApisNetOpenFeignClient;
 import com.unsa.reniec.domain.dtos.PersonResponseDto;
+import com.unsa.reniec.domain.dtos.ReniecApisNetResponse;
 
 @Primary
 @Service("reniec-apis-net-open-feign")
