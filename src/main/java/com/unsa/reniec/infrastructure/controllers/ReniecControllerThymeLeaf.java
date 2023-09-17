@@ -1,16 +1,18 @@
 package com.unsa.reniec.infrastructure.controllers;
 
-import com.unsa.reniec.application.services.PersonServiceMySql;
-import com.unsa.reniec.application.services.ReniecForeignService;
-import com.unsa.reniec.domain.dtos.ReniecApisNetRequest;
-import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
-
-import com.unsa.reniec.domain.dtos.PersonRequestDto;
-import com.unsa.reniec.domain.dtos.PersonResponseDto;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+
+import lombok.AllArgsConstructor;
+
+import com.unsa.reniec.application.services.PersonServiceMySql;
+import com.unsa.reniec.application.services.ReniecForeignService;
+import com.unsa.reniec.domain.dtos.PersonRequestDto;
+import com.unsa.reniec.domain.dtos.PersonResponseDto;
+import com.unsa.reniec.domain.dtos.ReniecApisNetRequest;
+
 
 @Controller
 @AllArgsConstructor
