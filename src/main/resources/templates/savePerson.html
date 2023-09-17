@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+  <head>
+    <meta charset="UTF-8"/>
+    <title>Save Person</title>
+    <!--suppress JSUnresolvedLibraryURL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" type="text/css">
+    <!--suppress JSUnresolvedLibraryURL -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" type="text/css">
+    <link rel="stylesheet" href="../static/customTitle.css" type="text/css">
+  </head>
+  <body>
+    <div align="center">
+      <div style="border-style:solid; width:500px">
+        <h1>User Registration</h1>
+        <h3>Your Document isn't on Reniec!</h3>
+        <p>Please add your Document to Reniec Database</p>
+        <form role="form" method="post" th:action="@{/register}" th:object="${personRequest}">
+          <label>Full Name:</label>
+          <input type="text" th:field = "*{name}"/>
+          <br/>
+          <label>Father Lastname:</label>
+          <input type="text" th:field = "*{fatherLastname}"/>
+          <br/>
+          <label>Mother Lastname:</label>
+          <input type="text" th:field="*{motherLastname}"/>
+          <br/>
+          <label>Document Number:</label>
+          <input type="text" th:field="*{documentNumber}"/>
+          <br/>
+          <label>Check Digit:</label>
+          <input type="text" th:field="*{checkDigit}"/>
+          <br/>
+          <button type="submit">Register</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
