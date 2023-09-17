@@ -22,7 +22,11 @@ public class ReniecControllerRest implements ReniecController {
     @Override
     @GetMapping
     public PersonResponseDto getByDocument(@RequestParam("number") String document) {
-        return this.reniecForeignService.getPersonByDocument(document);
+        PersonResponseDto reniecResponse = this.reniecForeignService.getPersonByDocument(document);
+        if (reniecResponse == null) {
+           return this.personServiceMySql.findByDocument(document);
+        }
+        return reniecResponse;
     }
 
     @Override
