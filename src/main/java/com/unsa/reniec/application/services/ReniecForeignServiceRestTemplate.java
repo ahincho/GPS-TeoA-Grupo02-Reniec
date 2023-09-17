@@ -27,7 +27,6 @@ public class ReniecApisNetRestTemplate implements ReniecForeignService {
         String url = baseUrl + apiUrl + "?numero=" + document;
         ResponseEntity<ReniecApisNetResponse> response = restTemplate.exchange(url, HttpMethod.GET, entity, ReniecApisNetResponse.class);
         if (response.getStatusCode() == HttpStatus.OK && response.getBody() != null) {
-            System.out.println("Person Found on APIS NET");
             ReniecApisNetResponse person = response.getBody();
             return mapReniecApisNetResponseToPersonResponseDto(person);
         } else {
